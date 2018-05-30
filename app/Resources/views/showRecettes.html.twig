@@ -1,0 +1,51 @@
+{% include 'base.html.twig' %}
+
+{% for elt in recipe %}
+
+    <div class="row" style="margin-top: 5%;">
+        <div class=""></div>
+        <h3 class="col-2 backColor">{{ elt.name }}</h3>
+        <div class="col-auto"></div>
+
+    </div>
+    <div class="row" style="margin-top: 5%;">
+        <div class="col-5"></div>
+        <img src="{{ elt.image }}" alt="" class="img-thumbnail col-1" style="width: 200px; height: 200px;">
+        <div class="col-4"></div>
+
+    </div>
+
+    <div class="row" style="margin-top: 5%;">
+        <div class="col-2">
+            <div class="row align-items-start backColor" style="border: solid;">
+                <aside class="col-12" style="border: solid;">
+                    <b>Ingredients:</b>
+                </aside>
+                <div class="col">
+                    <aside class="col-12">{{ elt.ingredients }}</aside>
+                </div>
+            </div>
+        </div>
+        <section class="col-7 offset-1 backColor" style="border: solid;">
+            <div class="row align-items-start" style="border: solid;">
+                <b>Préparation:</b>
+            </div>
+            {{ elt.fullrecipe }}
+        </section>
+        <div class="col-auto"></div>
+    </div>
+{% endfor %}
+
+<style>
+    body{
+
+
+        background:url("http://agapeeats.com/wp-content/uploads/2017/11/kitchen-tools.jpg") fixed no-repeat;
+
+        background-size: cover;
+    }
+    .backColor{
+        background-color: beige;
+    }
+
+</style>

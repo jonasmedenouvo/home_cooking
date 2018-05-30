@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% for recipe in recipe %}
+
+{#
+    <div class="card" style="width: 18rem;">
+#}
+{#
+    <img class="card-img-top w-25" src="{{ asset('uploads/images/'~recipe.image) }}" alt="Card image cap">
+#}{#
+    <img class="card-img-top w-25" src="{{ recipe.image }}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ recipe.name }}</h5>
+        <p class="card-text">{{ recipe.description }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+        <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+</div>#}
+        <div class="card w-25 ">
+            <img class="card-img-top" src="{{ recipe.image }}" alt="Card image cap"style="width: 18rem; height: 5%;">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipe.name }}</h5>
+                <p class="card-text">{{ recipe.description }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+{#
+</div>
+#}
+
+
+{% endfor %}
+
+{% endblock %}

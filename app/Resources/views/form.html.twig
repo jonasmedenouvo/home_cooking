@@ -1,0 +1,15 @@
+{% include 'base.html.twig' %}
+
+Bonjour {{ app.user.username }} bienvenue sur le formulaire d'ajout de recette:
+
+
+<div class="addform w-50 form-control ">
+    {{ form_start(form) }}
+    {{ form_end(form) }}
+</div>
+
+<style>
+    body{
+        background-image: url("https://havenskitchen.com/blog/wp-content/uploads/2012/12/havens_kitchen_food-13.jpg");
+    }
+</style>

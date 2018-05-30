@@ -1,0 +1,45 @@
+{% include 'base.html.twig' %}
+
+<table id="myTable" class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Nom de la recette</th>
+        <th>Type de plat</th>
+        <th>Vignette</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for elt in recette %}
+
+        <tr class="text-center">
+            <td>{{ elt.id }}</td>
+            <td>{{ elt.name }}</td>
+            <td>{{ elt.type }}</td>
+            <td><img src="{{ elt.image }}" alt="" style="width: 100px; height: 100px;"></td>
+            <td>
+                <button type="reset"><a href="{{ path('removeRecette',{'id':elt.id}) }}">Effacer</a></button>
+            </td>
+            <td>
+                <button type=""><a href="{{ path('updateRecette',{'id':elt.id}) }}">Mettre à jour</a></button>
+            </td>
+
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+<button><a href="{{ path('addRecette') }}">Ajouter</a></button>
+
+<style>
+    body{
+
+
+        background:url("https://kerryregoconsulting.com/wp-content/uploads/2012/03/tools.jpg") fixed no-repeat;
+
+        background-size: cover;
+    }
+    table{
+        background-color: wheat !important;
+    }
+</style>
