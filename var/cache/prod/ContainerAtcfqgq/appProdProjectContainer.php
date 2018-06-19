@@ -35,7 +35,7 @@ class appProdProjectContainer extends Container
 
         $this->services = array();
         $this->normalizedIds = array(
-            'appbundle\\controller\\CrudReceiptController' => 'AppBundle\\Controller\\CrudReceiptController',
+            'appbundle\\controller\\CrudRecipeController' => 'AppBundle\\Controller\\CrudRecipeController',
             'appbundle\\controller\\defaultcontroller' => 'AppBundle\\Controller\\DefaultController',
             'appbundle\\controller\\receiptcontroller' => 'AppBundle\\Controller\\ReceiptController',
             'appbundle\\form\\RecipeType' => 'AppBundle\\Form\\RecipeType',
@@ -101,7 +101,7 @@ class appProdProjectContainer extends Container
             'validate_request_listener' => 'getValidateRequestListenerService',
         );
         $this->fileMap = array(
-            'AppBundle\\Controller\\CrudReceiptController' => 'getAddReceiptControllerService.php',
+            'AppBundle\\Controller\\CrudRecipeController' => 'getAddReceiptControllerService.php',
             'AppBundle\\Controller\\DefaultController' => 'getDefaultControllerService.php',
             'AppBundle\\Controller\\ReceiptController' => 'getReceiptControllerService.php',
             'AppBundle\\Form\\RecipeType' => 'getReceiptTypeService.php',

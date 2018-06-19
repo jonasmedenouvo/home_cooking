@@ -79,16 +79,17 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
             </li>
 
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Contact</a>
+                <a class=\"nav-link\" href=\"";
+        // line 38
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("contactpage");
+        echo "\">Contact</a>
             </li>
 
-            ";
-        // line 44
-        echo "
+
 
         </ul>
     ";
-        // line 51
+        // line 48
         echo "
 
     </nav>
@@ -140,7 +141,7 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
 
     public function getDebugInfo()
     {
-        return array (  114 => 5,  92 => 51,  87 => 44,  77 => 34,  71 => 31,  62 => 25,  54 => 20,  43 => 11,  38 => 9,  32 => 5,  26 => 1,);
+        return array (  115 => 5,  93 => 48,  84 => 38,  77 => 34,  71 => 31,  62 => 25,  54 => 20,  43 => 11,  38 => 9,  32 => 5,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -190,12 +191,9 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
             </li>
 
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Contact</a>
+                <a class=\"nav-link\" href=\"{{ path('contactpage') }}\">Contact</a>
             </li>
 
-            {#<li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Partenaires</a>
-            </li>#}
 
 
         </ul>

@@ -110,13 +110,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         elseif (0 === strpos($pathinfo, '/a')) {
             // addRecette
             if ('/ajout' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\CrudReceiptController::addreceiptAction',  '_route' => 'addRecette',);
+                return array (  '_controller' => 'AppBundle\\Controller\\CrudRecipeController::addreceiptAction',  '_route' => 'addRecette',);
             }
 
             if (0 === strpos($pathinfo, '/admin')) {
                 // adminRecette
                 if ('/admin2' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\CrudReceiptController::adminrecipeAction',  '_route' => 'adminRecette',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\CrudRecipeController::adminrecipeAction',  '_route' => 'adminRecette',);
                 }
 
                 // easyadmin
@@ -162,12 +162,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             if (0 === strpos($pathinfo, '/liste')) {
                 // listRecette
                 if ('/liste' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\CrudReceiptController::listrecipeAction',  '_route' => 'listRecette',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\CrudRecipeController::listrecipeAction',  '_route' => 'listRecette',);
                 }
 
                 // removeRecette
                 if (preg_match('#^/liste/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'removeRecette')), array (  '_controller' => 'AppBundle\\Controller\\CrudReceiptController::removereceiptAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'removeRecette')), array (  '_controller' => 'AppBundle\\Controller\\CrudRecipeController::removereceiptAction',));
                 }
 
             }
@@ -215,13 +215,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // updateRecette
         if (0 === strpos($pathinfo, '/update') && preg_match('#^/update/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'updateRecette')), array (  '_controller' => 'AppBundle\\Controller\\CrudReceiptController::updateFormAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'updateRecette')), array (  '_controller' => 'AppBundle\\Controller\\CrudRecipeController::updateFormAction',));
         }
 
         if (0 === strpos($pathinfo, '/re')) {
             // showRecette
             if ('/recettes' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\CrudReceiptController::showFormAction',  '_route' => 'showRecette',);
+                return array (  '_controller' => 'AppBundle\\Controller\\CrudRecipeController::showFormAction',  '_route' => 'showRecette',);
             }
 
             if (0 === strpos($pathinfo, '/register')) {
@@ -339,7 +339,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/profile')) {
+        // contactpage
+        if ('/contact' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::contactAction',  '_route' => 'contactpage',);
+        }
+
+        if (0 === strpos($pathinfo, '/profile')) {
             // fos_user_profile_show
             if ('/profile' === $trimmedPathinfo) {
                 $ret = array (  '_controller' => 'fos_user.profile.controller:showAction',  '_route' => 'fos_user_profile_show',);

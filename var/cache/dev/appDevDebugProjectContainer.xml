@@ -117,9 +117,10 @@
     <parameter key="database_name">HomeCooking</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
-    <parameter key="mailer_transport">smtp</parameter>
+    <parameter key="mailer_transport">gmail</parameter>
+    <parameter key="mailer_encryption">ssl</parameter>
     <parameter key="mailer_host">smtp.gmail.com</parameter>
-    <parameter key="mailer_user">jonas.medenouvo@lapiscine.pro</parameter>
+    <parameter key="mailer_user">heavenblow24@gmail.com</parameter>
     <parameter key="mailer_password">64phone2keep64</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="locale">fr</parameter>
@@ -230,12 +231,12 @@
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">jonas.medenouvo@lapiscine.pro</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">heavenblow24@gmail.com</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.password">64phone2keep64</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
@@ -376,7 +377,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="jonas.medenouvo@lapiscine.pro">jonas.medenouvo@lapiscine.pro</parameter>
+      <parameter key="heavenblow24@gmail.com">heavenblow24@gmail.com</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
     <parameter key="fos_user.registration.form.type">FOS\UserBundle\Form\Type\RegistrationFormType</parameter>
@@ -392,7 +393,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.resetting.email.from_email" type="collection">
-      <parameter key="jonas.medenouvo@lapiscine.pro">jonas.medenouvo@lapiscine.pro</parameter>
+      <parameter key="heavenblow24@gmail.com">heavenblow24@gmail.com</parameter>
     </parameter>
     <parameter key="fos_user.resetting.retry_ttl">7200</parameter>
     <parameter key="fos_user.resetting.token_ttl">86400</parameter>
@@ -680,13 +681,16 @@
   <services>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="AppBundle\AppBundle" class="AppBundle\AppBundle" public="false" autowire="true" autoconfigure="true"/>
-    <service id="AppBundle\Controller\CrudReceiptController" class="AppBundle\Controller\CrudReceiptController" public="true" autowire="true" autoconfigure="true">
+    <service id="AppBundle\Controller\CrudRecipeController" class="AppBundle\Controller\CrudRecipeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\EventListener\ImageUploadListener" class="AppBundle\EventListener\ImageUploadListener" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Form\ContactType" class="AppBundle\Form\ContactType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="AppBundle\Form\RecipeType" class="AppBundle\Form\RecipeType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -709,7 +713,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.plkdpdx"/>
+      <argument type="service" id="service_locator.gqkkmgz"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -976,6 +980,7 @@
         <argument>EasyCorp\Bundle\EasyAdminBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>AppBundle\Form\ContactType</argument>
         <argument>AppBundle\Form\RecipeType</argument>
         <argument>AppBundle\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -1199,7 +1204,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.oglrkje"/>
+      <argument type="service" id="service_locator.8hxjhgz"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -2614,6 +2619,14 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -4335,13 +4348,13 @@
         <argument type="service" id="3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~gwqeqp."/>
       </argument>
       <call method="setUsername">
-        <argument>jonas.medenouvo@lapiscine.pro</argument>
+        <argument>heavenblow24@gmail.com</argument>
       </call>
       <call method="setPassword">
         <argument>64phone2keep64</argument>
       </call>
       <call method="setAuthMode">
-        <argument>null</argument>
+        <argument>login</argument>
       </call>
     </service>
     <service id="swiftmailer.mailer.default.transport.buffer" class="Swift_Transport_StreamBuffer" public="false">
@@ -4361,10 +4374,10 @@
         <argument>smtp.gmail.com</argument>
       </call>
       <call method="setPort">
-        <argument>25</argument>
+        <argument>465</argument>
       </call>
       <call method="setEncryption">
-        <argument>null</argument>
+        <argument>ssl</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>
@@ -5428,19 +5441,21 @@
         <argument>server:log</argument>
       </call>
     </service>
-    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\CrudReceiptController" class="AppBundle\Controller\CrudReceiptController" public="true" autowire="true" abstract="true"/>
-    <service id="abstract.instanceof.AppBundle\Controller\CrudReceiptController" class="AppBundle\Controller\CrudReceiptController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\CrudRecipeController" class="AppBundle\Controller\CrudRecipeController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\CrudRecipeController" class="AppBundle\Controller\CrudRecipeController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\ContactType" class="AppBundle\Form\ContactType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\ContactType" class="AppBundle\Form\ContactType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\RecipeType" class="AppBundle\Form\RecipeType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\RecipeType" class="AppBundle\Form\RecipeType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\UserType" class="AppBundle\Form\UserType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\UserType" class="AppBundle\Form\UserType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="service_locator.zetzgjm" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.kv2main" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.plkdpdx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.gqkkmgz" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
@@ -5583,9 +5598,10 @@
         <argument key="inline" type="service" id="fragment.renderer.inline"/>
       </argument>
     </service>
-    <service id="service_locator.oglrkje" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.8hxjhgz" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="AppBundle\Form\ContactType" type="service" id="AppBundle\Form\ContactType"/>
         <argument key="AppBundle\Form\RecipeType" type="service" id="AppBundle\Form\RecipeType"/>
         <argument key="AppBundle\Form\UserType" type="service" id="AppBundle\Form\UserType"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType" type="service" id="easyadmin.form.type.autocomplete"/>
