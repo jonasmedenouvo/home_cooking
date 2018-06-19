@@ -44,7 +44,7 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
 </head>
 <body>
 <header>
-    <nav id=\"Nav\" class=\"navbar navbar-expand-lg navbar-light bg-light\">
+    <nav id=\"Nav\" class=\"navbar navbar-expand-lg navbar-light bg-danger\">
 
 
         <ul class=\"navbar-nav mr-auto\">
@@ -85,13 +85,10 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
         echo "\">Contact</a>
             </li>
 
-
-
         </ul>
     ";
-        // line 48
+        // line 46
         echo "
-
     </nav>
 </header>
 
@@ -100,8 +97,7 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
         width: 12%;
     }
 
-    ul {
-    }
+
 </style>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -141,7 +137,7 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
 
     public function getDebugInfo()
     {
-        return array (  115 => 5,  93 => 48,  84 => 38,  77 => 34,  71 => 31,  62 => 25,  54 => 20,  43 => 11,  38 => 9,  32 => 5,  26 => 1,);
+        return array (  111 => 5,  91 => 46,  84 => 38,  77 => 34,  71 => 31,  62 => 25,  54 => 20,  43 => 11,  38 => 9,  32 => 5,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -168,7 +164,7 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
 </head>
 <body>
 <header>
-    <nav id=\"Nav\" class=\"navbar navbar-expand-lg navbar-light bg-light\">
+    <nav id=\"Nav\" class=\"navbar navbar-expand-lg navbar-light bg-danger\">
 
 
         <ul class=\"navbar-nav mr-auto\">
@@ -194,14 +190,11 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
                 <a class=\"nav-link\" href=\"{{ path('contactpage') }}\">Contact</a>
             </li>
 
-
-
         </ul>
     {#    <form class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
             <button class=\"btn btn-outline-danger my-2 my-sm-0\" type=\"submit\">Rechercher</button>
         </form>#}
-
 
     </nav>
 </header>
@@ -211,8 +204,7 @@ class __TwigTemplate_df0cb2cc006b268ec79208406c8078159370f289d9a0117292d13965fee
         width: 12%;
     }
 
-    ul {
-    }
+
 </style>", "header.html.twig", "/opt/lampp/htdocs/www/home_cooking/app/Resources/views/header.html.twig");
     }
 }
