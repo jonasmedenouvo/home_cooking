@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8aad9bb-e7d2-412f-bed0-12f1297bba5a" name="Default" comment="Ajout du form contact">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/default/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/5a/5a130bbb31d6ac824446e43029d418549ecc7f5336f65c40ba7c61a5b6e0783b.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/5a/5a130bbb31d6ac824446e43029d418549ecc7f5336f65c40ba7c61a5b6e0783b.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
-    </list>
+    <list default="true" id="f8aad9bb-e7d2-412f-bed0-12f1297bba5a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -371,12 +364,20 @@
       <workItem from="1529060141670" duration="8958000" />
       <workItem from="1529398686582" duration="2630000" />
       <workItem from="1529435331490" duration="863000" />
-      <workItem from="1529439056864" duration="3096000" />
+      <workItem from="1529439056864" duration="3232000" />
     </task>
+    <task id="LOCAL-00001" summary="Reduct contact form width">
+      <created>1529442902258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1529442902258</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232107000" />
+    <option name="totallyTimeSpent" value="232243000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,7 +390,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="229" y="231" width="1593" height="779" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29541048" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32931036" />
@@ -442,7 +442,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajout du form contact" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du form contact" />
+    <MESSAGE value="Reduct contact form width" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reduct contact form width" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/css/custom.scss" />
