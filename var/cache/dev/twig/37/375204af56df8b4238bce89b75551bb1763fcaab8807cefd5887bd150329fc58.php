@@ -58,7 +58,7 @@ class __TwigTemplate_01da699e66555cf7fe0d8b65340c81dcad0c4d275a2323b4da1f63e89c3
             echo "</td>
             <td><img src=\"";
             // line 20
-            echo twig_escape_filter($this->env, $this->getAttribute($context["elt"], "image", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("uploads/images/" . $this->getAttribute($context["elt"], "image", array()))), "html", null, true);
             echo "\" alt=\"\" style=\"width: 100px; height: 100px;\"></td>
         </tr>
     ";
@@ -146,7 +146,7 @@ class __TwigTemplate_01da699e66555cf7fe0d8b65340c81dcad0c4d275a2323b4da1f63e89c3
             <td>{{ elt.name }}</td>
             <td>{{ elt.type }}</td>
             <td>{{ elt.description }}</td>
-            <td><img src=\"{{ elt.image }}\" alt=\"\" style=\"width: 100px; height: 100px;\"></td>
+            <td><img src=\"{{ asset('uploads/images/'~elt.image) }}\" alt=\"\" style=\"width: 100px; height: 100px;\"></td>
         </tr>
     {% endfor %}
 

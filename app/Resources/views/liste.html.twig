@@ -17,7 +17,7 @@
             <td>{{ elt.name }}</td>
             <td>{{ elt.type }}</td>
             <td>{{ elt.description }}</td>
-            <td><img src="{{ elt.image }}" alt="" style="width: 100px; height: 100px;"></td>
+            <td><img src="{{ asset('uploads/images/'~elt.image) }}" alt="" style="width: 100px; height: 100px;"></td>
         </tr>
     {% endfor %}
 

@@ -16,7 +16,7 @@
             <td>{{ elt.id }}</td>
             <td>{{ elt.name }}</td>
             <td>{{ elt.type }}</td>
-            <td><img src="{{ elt.image }}" alt="" style="width: 100px; height: 100px;"></td>
+            <td><img src="{{ asset('uploads/images/'~elt.image) }}" alt="" style="width: 100px; height: 100px;"></td>
             <td>
                 <button type="reset"><a href="{{ path('removeRecette',{'id':elt.id}) }}">Effacer</a></button>
             </td>
